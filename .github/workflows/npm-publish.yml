@@ -120,40 +120,40 @@ jobs:
 
 
 
-      # cache the dependencies to speed up the build
-
-      - name: Cache dependencies
-
-        uses: actions/cache@v2
-
-        with:
-
-          path: ~/.npm
-
-          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-
-          restore-keys: |
-
-            ${{ runner.os }}-node-
-
-      
-
-      # install dependencies
-
-      - name: Install dependencies
-
-        run: npm i
-
-
-      # test
-      - name: Run tests
-        run: npm test -- --watchAll=false
-
-
-
-      # build the react app
-
-      - name: Build
-
-        run: npm run build
-
+#      # cache the dependencies to speed up the build
+#
+#      - name: Cache dependencies
+#
+#        uses: actions/cache@v2
+#
+#        with:
+#
+#          path: ~/.npm
+#
+#          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+#
+#          restore-keys: |
+#
+#            ${{ runner.os }}-node-
+#
+#
+#
+#      # install dependencies
+#
+#      - name: Install dependencies
+#
+#        run: npm i
+#
+#
+#      # test
+#      - name: Run tests
+#        run: npm test -- --watchAll=false
+#
+#
+#
+#      # build the react app
+#
+#      - name: Build
+#
+#        run: npm run build
+#

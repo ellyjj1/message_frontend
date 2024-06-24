@@ -1,6 +1,6 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import HelloWorld from "./components/HelloWorld";
+import HelloWorld from "./components/helloworld";
 
 
 test('renders correctly', () => {
