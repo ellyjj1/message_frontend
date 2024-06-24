@@ -72,37 +72,82 @@
 
 #--------------------prof song's version-------------------
 
-name: CI/CD
+name: React App Deployment # name of the workflo
+
+
 
 on:
+
   push:
-    branches: [ master ]
-  pull_request:
-    branches: [ master ]
+
+    branches:
+
+      - main # branch name
+
+
 
 jobs:
-  build:
+
+  deploy-react-to-gh-pages:
 
     runs-on: ubuntu-latest
 
-    strategy:
-      matrix:
-        node-version: [12.x]
+    env:
+
+      EXAMPLE: example # environment variable
+
+
 
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v2
 
-    - name: Set up Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v1
-      with:
-        node-version: ${{ matrix.node-version }}
+      # checkout the repository content to github runner
 
-    - name: Install dependencies
-      run: npm install
+      - name: Checkout
 
-    - name: Run the tests
-      run: npm test
+        uses: actions/checkout@v2
 
-    - name: Build
-      run: npm run build
+
+
+      # setup nodejs environment
+
+      - name: Setup Node.js environment
+
+        uses: actions/setup-node@v2.1.5
+
+        with:
+
+          node-version: "18.16.1"
+
+
+
+      # cache the dependencies to speed up the build
+
+      - name: Cache dependencies
+
+        uses: actions/cache@v2
+
+        with:
+
+          path: ~/.npm
+
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+
+          restore-keys: |
+
+            ${{ runner.os }}-node-
+
+
+
+      # install dependencies
+
+      - name: Install dependencies
+
+        run: npm i
+
+
+
+      # build the react app
+
+      - name: Build
+
+        run: npm run build
