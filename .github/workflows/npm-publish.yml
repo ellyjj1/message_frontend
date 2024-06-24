@@ -136,7 +136,7 @@ jobs:
 
             ${{ runner.os }}-node-
 
-
+      
 
       # install dependencies
 
@@ -145,9 +145,15 @@ jobs:
         run: npm i
 
 
+    # test
+      - name: Run tests
+        run: npm test -- --watchAll=false
+
+
 
       # build the react app
 
       - name: Build
 
         run: npm run build
+
