@@ -1,0 +1,1 @@
+export const BaseUrl = "https://message-peach-chi.vercel.app/";
