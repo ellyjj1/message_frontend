@@ -33,8 +33,46 @@
 #        env:
 #          NODE_AUTH_TOKEN: ${{secrets.npm_token}}
 
+#--------------------chatgpt version-------------------
+#name: React CI
+#
+#on:
+#  push:
+#    branches: [ master ]
+#  pull_request:
+#    branches: [ master ]
+#
+#jobs:
+#  build:
+#    runs-on: ubuntu-latest
+#
+#    steps:
+#    - name: Checkout repository
+#      uses: actions/checkout@v2
+#
+#    - name: Set up Node.js
+#      uses: actions/setup-node@v2
+#      with:
+#        node-version: '14'
+#
+#    - name: Install dependencies
+#      run: npm install
+#
+#    - name: Run tests
+#      run: npm test -- --watchAll=false
+#
+#    - name: Build project
+#      run: npm run build
+#
+#    - name: Upload production-ready build files
+#      uses: actions/upload-artifact@v2
+#      with:
+#        name: build
+#        path: build/
 
-name: React CI
+#--------------------prof song's version-------------------
+
+name: CI/CD
 
 on:
   push:
@@ -44,28 +82,27 @@ on:
 
 jobs:
   build:
+
     runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [12.x]
 
     steps:
     - name: Checkout repository
       uses: actions/checkout@v2
 
-    - name: Set up Node.js
-      uses: actions/setup-node@v2
+    - name: Set up Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
       with:
-        node-version: '14'
+        node-version: ${{ matrix.node-version }}
 
     - name: Install dependencies
       run: npm install
 
-    - name: Run tests
-      run: npm test -- --watchAll=false
+    - name: Run the tests
+      run: npm test
 
-    - name: Build project
+    - name: Build
       run: npm run build
-
-    - name: Upload production-ready build files
-      uses: actions/upload-artifact@v2
-      with:
-        name: build
-        path: build/
