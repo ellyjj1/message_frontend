@@ -145,7 +145,7 @@ jobs:
         run: npm i
 
 
-    # test
+      # test
       - name: Run tests
         run: npm test -- --watchAll=false
 
