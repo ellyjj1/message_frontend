@@ -1,10 +1,10 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import HelloWorld from "./components/helloworld";
+import Helloworld from "./components/helloworld";
 
 
 test('renders correctly', () => {
-    const component = renderer.create(<HelloWorld/>);
+    const component = renderer.create(<Helloworld/>);
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
 });
