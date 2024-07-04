@@ -55,7 +55,6 @@ function Numbersumup (props) {
     );
 }
 
-
 export default Numbersumup;
 
 
