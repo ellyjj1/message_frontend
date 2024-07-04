@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Currency</title>
+    <script>
+        document.addEventListener("DOMContentLoaded", function(){
+            
+            document.querySelector("form").addEventListener("submit", function(event){
+                fetch("https://api.exchangeratesapi.io/latest?base=USD")
+            .then(response => {
+                return response.json();
+            })
+            .then(data => {
+                const info = document.querySelector("#result").value;
+                const error = data.error.type;
+                document.querySelector("body").innerHTML = error;
+            
+        })
+        return false
+            })
+            
+           
+
+        })
+
+    </script>
+</head>
+<body>
+    <form>
+        <input id="error"   placeholder="what kind of Error?"  type="text">
+        <input id="submit" type="submit" >
+    </form>
+    <div id="result">
+
+    </div>
+
+</body>
+</html>
