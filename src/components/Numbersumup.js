@@ -27,7 +27,7 @@ function Numbersumup (props) {
             maxBodyLength: Infinity,
             url: BaseUrl+'message/sum_numbers/',
             headers: {
-                'Authorization': 'token 73e2c415257e937838d2bcc91177afc0f016af2e',
+                // 'Authorization': 'token 73e2c415257e937838d2bcc91177afc0f016af2e',
                 'Content-Type': 'application/json'
             },
             data: data
