@@ -7,6 +7,8 @@ function Numbersumup (props) {
     const [startNum, setStartNum] = useState(0);
     const [endNum, setEndNum] = useState(0);
     const [result, setResult] = useState(0);
+    const token = localStorage.getItem('authToken');
+
 
     function start_num_handler(e) {
         setStartNum(e.target.value)
@@ -27,7 +29,7 @@ function Numbersumup (props) {
             maxBodyLength: Infinity,
             url: BaseUrl+'message/sum_numbers/',
             headers: {
-                // 'Authorization': 'token 73e2c415257e937838d2bcc91177afc0f016af2e',
+                'Authorization': 'token ' + token,
                 'Content-Type': 'application/json'
             },
             data: data
@@ -55,6 +57,7 @@ function Numbersumup (props) {
             <p> End Number: <input type={"number"} id={"endnum"} onChange={end_num_handler}/></p>
             <p><button id={"calbtn"} onClick={cal}>Calculate</button></p>
             <p>Result: <span id={"result"}>{result}</span></p>
+            {/*<p><span id={"token"}>{token}</span></p>*/}
         </div>
     );
 }

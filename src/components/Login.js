@@ -37,6 +37,7 @@ function Login(props) {
         axios.request(config)
             .then((response) => {
                 console.log(JSON.stringify(response.data));
+                localStorage.setItem('authToken', response.data.token); // Store token in local storage
                 setLogin_status("Login Success!")
             })
             .catch((error) => {
