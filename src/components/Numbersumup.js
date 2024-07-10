@@ -42,6 +42,13 @@ function Numbersumup (props) {
             })
             .catch((error) => {
                 console.log(error);
+                if (!token) {
+                    alert("You need to log in.");
+                    window.location.href = '/login'
+                }
+                else {
+                    alert("An error occurred. Please try again.");
+                }
             });
 
 

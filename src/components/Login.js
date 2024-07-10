@@ -47,8 +47,6 @@ function Login(props) {
     }
 
 
-
-
     return (
         <div>
             <h1>login page</h1>
@@ -58,6 +56,9 @@ function Login(props) {
                 <button id={"loginbtn"} onClick={login}>Login</button>
             </p>
             <p id={'login_status'}>{login_status}</p>
+            {/*<p id={"token"}>*/}
+            {/*    {localStorage.getItem('authToken')}*/}
+            {/*</p>*/}
         </div>
     );
 }

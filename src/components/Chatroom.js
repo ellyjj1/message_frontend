@@ -1,15 +1,21 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import {BaseUrl} from "../consistents";
 import axios from "axios";
 
-function Chatroom(props) {
-    const [chatroom, setChatroom] = React.useState([]);
+function Chatroom() {
+    const [chatroom, setChatroom] = useState([]);
+    const token = localStorage.getItem('authToken');
+
+
     useEffect(() => {
         let config = {
             method: 'get',
             maxBodyLength: Infinity,
             url: BaseUrl+ "message/chatroom/",
-            headers: {}
+            headers: {
+                'Authorization': 'token ' + token,
+                'Content-Type': 'application/json'
+            }
         };
 
         axios.request(config)
@@ -19,17 +25,22 @@ function Chatroom(props) {
             })
             .catch((error) => {
                 console.log(error);
+                if (!token) {
+                    alert("You need to log in first.");
+                    window.location.href = '/login';
+                }else
+                    alert("An error occurred. Please try again.");
             });
     }, []);
     return (
         <div>
             <h1>Chat Room</h1>
-            <hi>test ci</hi>
             <ul>
                 {chatroom.map((chatroom) => (
                     <li key={chatroom.id}>{chatroom.name}</li>
                 ))}
             </ul>
+            {/*<p><span id={"token"}>{token}</span></p>*/}
         </div>
     );
 }
