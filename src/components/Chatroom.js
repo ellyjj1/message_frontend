@@ -31,7 +31,8 @@ function Chatroom() {
                 }else
                     alert("An error occurred. Please try again.");
             });
-    }, []);
+    }, [token]);
+
     return (
         <div>
             <h1>Chat Room</h1>
