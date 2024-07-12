@@ -59,7 +59,6 @@ function Numbersumup (props) {
 
         <div style={{ marginTop: '50px' }}>
             <h1 >Number Sum Up</h1>
-
             <p> Start Number: <input type={"number"} id={"startnum"} onChange={start_num_handler}/></p>
             <p> End Number: <input type={"number"} id={"endnum"} onChange={end_num_handler}/></p>
             <p><button id={"calbtn"} onClick={cal}>Calculate</button></p>
