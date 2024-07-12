@@ -8,6 +8,7 @@ import Chatroom from "./components/Chatroom";
 import Numbersumup from "./components/Numbersumup";
 import React from "react";
 import Login from "./components/Login";
+import Register from "./components/Register";
 
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
             <Route path="/" element={<Home/>}/>
             <Route path="/chatroom" element={<Chatroom/>}/>
             <Route path="/sumupnum" element={<Numbersumup/>}/>
+            <Route path="/register" element={<Register/>}/>
             <Route path="/login" element={<Login/>}/>
         </Routes>
         {/*<Chatroom/>*/}

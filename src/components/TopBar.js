@@ -7,9 +7,9 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 
 function TopBar() {
   return (
-    <Navbar expand="lg" className="bg-body-tertiary">
+    <Navbar bg="dark" data-bs-theme="dark">
       <Container fluid>
-        <Navbar.Brand href="#">Navbar scroll</Navbar.Brand>
+        <Navbar.Brand href="#">Maungawhau Institute of Studies</Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
           <Nav
@@ -18,6 +18,7 @@ function TopBar() {
             navbarScroll
           >
             <Nav.Link href="/">Home</Nav.Link>
+            <Nav.Link href="/register">Register</Nav.Link>
             <Nav.Link href="/chatroom">Chat Room</Nav.Link>
             <Nav.Link href="/sumupnum">Number Sum Up</Nav.Link>
             <Nav.Link href="/login">login</Nav.Link>

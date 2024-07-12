@@ -56,6 +56,7 @@ function Login(props) {
                 <button id={"loginbtn"} onClick={login}>Login</button>
             </p>
             <p id={'login_status'}>{login_status}</p>
+            {/*调试show token to check if login success*/}
             {/*<p id={"token"}>*/}
             {/*    {localStorage.getItem('authToken')}*/}
             {/*</p>*/}
