@@ -48,7 +48,7 @@ function Login(props) {
 
 
     return (
-        <div>
+        <div className="container mt-5">
             <h1>login page</h1>
             <p>Username <input id={"username"} type={'text'} onChange={usernameHandler}/></p>
             <p>Password <input id={"password"} type={'password'} onChange={passwordHandler}/></p>

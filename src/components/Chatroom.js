@@ -34,7 +34,7 @@ function Chatroom() {
     }, [token]);
 
     return (
-        <div>
+        <div className="container mt-5">
             <h1>Chat Room</h1>
             <ul>
                 {chatroom.map((chatroom) => (

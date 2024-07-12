@@ -57,7 +57,7 @@ function Numbersumup (props) {
 
     return (
 
-        <div style={{ marginTop: '50px' }}>
+        <div className="container mt-5">
             <h1 >Number Sum Up</h1>
             <p> Start Number: <input type={"number"} id={"startnum"} onChange={start_num_handler}/></p>
             <p> End Number: <input type={"number"} id={"endnum"} onChange={end_num_handler}/></p>

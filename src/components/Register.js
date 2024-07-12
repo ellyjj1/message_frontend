@@ -59,7 +59,7 @@ function Register() {
     };
 
     return (
-        <div>
+        <div className="container mt-5">
             <h1>Register</h1>
             <p></p>
             <form onSubmit={handleSubmit}>
