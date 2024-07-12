@@ -19,9 +19,9 @@ function TopBar() {
           >
             <Nav.Link href="/">Home</Nav.Link>
             <Nav.Link href="/register">Register</Nav.Link>
+            <Nav.Link href="/login">login</Nav.Link>
             <Nav.Link href="/chatroom">Chat Room</Nav.Link>
             <Nav.Link href="/sumupnum">Number Sum Up</Nav.Link>
-            <Nav.Link href="/login">login</Nav.Link>
 
             <NavDropdown title="Link" id="navbarScrollingDropdown">
               <NavDropdown.Item href="#action3">Action</NavDropdown.Item>
