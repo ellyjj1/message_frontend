@@ -38,6 +38,8 @@ function Login(props) {
             .then((response) => {
                 console.log(JSON.stringify(response.data));
                 localStorage.setItem('authToken', response.data.token); // Store token in local storage
+                localStorage.setItem('username', username); // Store token in local storage
+
                 setLogin_status("Login Success!")
             })
             .catch((error) => {

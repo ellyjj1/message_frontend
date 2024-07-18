@@ -9,6 +9,7 @@ import Numbersumup from "./components/Numbersumup";
 import React from "react";
 import Login from "./components/Login";
 import Register from "./components/Register";
+import Createchatroom from "./components/Createchatroom";
 
 
 function App() {
@@ -21,6 +22,8 @@ function App() {
             <Route path="/sumupnum" element={<Numbersumup/>}/>
             <Route path="/register" element={<Register/>}/>
             <Route path="/login" element={<Login/>}/>
+            <Route path="/createChatroom" element={<Createchatroom/>}/>
+
         </Routes>
         {/*<Chatroom/>*/}
       {/*<button classRoom={"btn btn-primary"}>*/}
