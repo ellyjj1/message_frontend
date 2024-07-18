@@ -97,7 +97,7 @@ function Createchatroom() {
     }
 
     return (
-        <div>
+        <div className="container mt-5">
             <h1>Create Chat Room</h1>
             <p>Name: <input id={"name"} type={"text"}/></p>
             <p>Created By: {login_user}</p>
