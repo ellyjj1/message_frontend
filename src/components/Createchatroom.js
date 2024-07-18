@@ -89,7 +89,7 @@ function Createchatroom() {
             })
             .catch((error) => {
                 console.log(error);
-                setCreate_status("Some error happen, please try again late.")
+                setCreate_status("Some error happen, please login or try again late.")
 
             });
 
