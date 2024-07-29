@@ -107,7 +107,7 @@ function Createchatroom() {
                 })}
             </select></p>
             <button onClick={createChatRoom}>Create</button>
-            <p>{create_status}</p>
+            <p id="create_status">{create_status}</p>
         </div>
     );
 }
