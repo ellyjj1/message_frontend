@@ -1,70 +1,87 @@
-# Getting Started with Create React App
+# Messaging Application of MIS
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## 1. Introduce Project
 
-## Available Scripts
+This repository is a school project which contains a messaging application built with **React.js** for the frontend and **Django** for the backend. The application offers real-time chat capabilities, allowing users to communicate within chat rooms. It includes essential features such as user authentication, chatroom management, and seamless message handling.
 
-In the project directory, you can run:
+## 2. How to Install
 
-### `npm start`
+### Backend (Django)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/ellyjj1/message.git
+   cd message/backend
+   ```
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+2. **Create a virtual environment:**
+   ```bash
+   python -m venv venv
+   source venv/bin/activate  # On Windows, use `venv\Scripts\activate`
+   ```
 
-### `npm test`
+3. **Install the dependencies:**
+   ```bash
+   pip install -r requirements.txt
+   ```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+4. **Apply migrations:**
+   ```bash
+   python manage.py migrate
+   ```
 
-### `npm run build`
+5. **Create a superuser (optional, for admin access):**
+   ```bash
+   python manage.py createsuperuser
+   ```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Frontend (React.js)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+1. **Navigate to the frontend directory:**
+   ```bash
+   cd ../frontend
+   ```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+2. **Install Node.js dependencies:**
+   ```bash
+   npm install
+   ```
 
-### `npm run eject`
+## 3. How to Start
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Backend (Django)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+1. **Start the Django development server:**
+   ```bash
+   python manage.py runserver
+   ```
+   The backend server will be running at `http://127.0.0.1:8000/`.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Frontend (React.js)
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+1. **Start the React development server:**
+   ```bash
+   npm start
+   ```
+   The frontend will be running at `http://localhost:3000/`.
 
-## Learn More
+## 4. How to Use
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+1. **Register/Login:**
+   - Navigate to the login page.
+   - If you don't have an account, register by providing your username and password.
+   - After registration, log in using your credentials.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+2. **Join or Create a Chatroom:**
+   - After logging in, you can join existing chatrooms or create a new one.
+   - Enter the chatroom to start sending and receiving messages in real-time.
 
-### Code Splitting
+3. **Send Messages:**
+   - Type your message in the input field and press enter to send.
+   - Messages from other users in the chatroom will appear in the chat window.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+4. **Sum Up App:**
+   - App for sum up the numbers, only use after login.
 
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+5. **Logout:**
+   - log out the accout.
